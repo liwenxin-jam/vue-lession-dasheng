@@ -2,6 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
+import './plugins/element.js';
 require('./utils/emiter');
 
 Vue.config.productionTip = false;
