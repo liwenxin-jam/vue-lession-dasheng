@@ -2,11 +2,20 @@
   <div id="app">
     <!-- <router-view /> -->
 
-    <k-form :model="model" :rules="rules" ref="loginForm">
+    <div>
+      <Tree></Tree>
+    </div>
+
+    <!-- <div>
+      <button @click="message">点我</button>
+      <Box v-if="showMsg">
+        哈哈
+      </Box>
+    </div> -->
+
+    <!-- <k-form :model="model" :rules="rules" ref="loginForm">
       <k-form-item label="用户名" prop="username">
-        <!-- <Demo> -->
-          <k-input v-model="model.username"></k-input>
-        <!-- </Demo> -->
+        <k-input v-model="model.username"></k-input>
       </k-form-item>
       <k-form-item label="确认密码" prop="password">
         <k-input type="password" v-model="model.password"></k-input>
@@ -14,7 +23,7 @@
       <k-form-item>
         <el-button @click="submitForm('loginForm')">提交</el-button>
       </k-form-item>
-    </k-form>
+    </k-form> -->
 
     <!-- <h2>{{name}}</h2>
     <k-input v-model="name"></k-input>
@@ -36,6 +45,8 @@
   import KInput from './kcomponent/KInput';
   import KFormItem from './kcomponent/KFormItem';
   import KForm from './kcomponent/KForm';
+  import Box from './kcomponent/Box.vue';
+  import Tree from './components/Tree.vue';
 
   export default {
     name: 'app',
@@ -47,12 +58,15 @@
       ElementForm,
       KInput,
       KFormItem,
-      KForm
+      KForm,
+      Box,
+      Tree
     },
     data() {
       return {
         name: 'hello world',
         msg: '',
+        showMsg: false,
         model: { username: "", password: "" },
         rules: {
           username: [
@@ -80,7 +94,19 @@
             alert('校验失败！')
           }
         })
-      }
+      },
+      message() {
+        this.showMsg = true
+        setTimeout(() => {
+          this.showMsg = false
+
+        }, 2000);
+        // window.alert()
+        this.$Notice.info({
+          content: '必须的！',
+          duration: 1
+        });
+      },
     }
   }
 </script>

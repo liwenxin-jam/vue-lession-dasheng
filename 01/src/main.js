@@ -4,6 +4,9 @@ import router from "./router";
 import store from "./store";
 import './plugins/element.js';
 require('./utils/emiter');
+import Notice from '../src/components/notice/notice';
+// Notice.info
+Vue.prototype.$Notice = Notice;
 
 Vue.config.productionTip = false;
 
