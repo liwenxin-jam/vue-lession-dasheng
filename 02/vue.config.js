@@ -1,10 +1,11 @@
 module.exports = {
+  lintOnSave: false,
   configureWebpack: {
     // 扩展webpack
     devServer: {
-      before (app) {
+      before(app) {
         // app就是一个express
-        app.get('/api/goods', function (req, res) {
+        app.get('/api/goods', function(req, res) {
           res.json({
             list: [
               { text: '百万年薪架构师', price: 100 },

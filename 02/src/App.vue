@@ -26,7 +26,7 @@ export default {
     console.log(name)
     // let data
     // let ret = await this.$axios.get('/api/goods')
-    // console.lstoreog(ret.data)
+    // console.log(ret.data)
 
     // let mock = await this.$axios.get('/easymock/course/list')
     // console.log(mock.data)
